@@ -23,6 +23,7 @@ export default function Subreddits() {
                 <p>r/gaming</p>
                 <hr />
                 <p>r/dogecoin</p>
+                <hr />
             </div>
         </div>
     )
