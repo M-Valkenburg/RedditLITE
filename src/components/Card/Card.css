@@ -1,0 +1,60 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--color-card);
+    box-shadow: 0 5px 10px var(--color-header);
+    border-radius: 10px;
+    margin: 15px 0;
+}
+
+h2 {
+    font-family: sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    margin: 0;
+    margin-bottom: -4px;
+}
+
+.timestamp {
+    font-size: .9rem;
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+.post-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-color);
+    border-top: 2px solid var(--color-accent);
+    margin-top: 15px;
+}
+
+.votes,
+.comments {
+    display: inline-flex;
+    align-items: center;
+}
+
+.votes span,
+.votes p,
+.comments span,
+.comments p {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+.votes span,
+.comments {
+    cursor: pointer;
+}
+
+.votes span {
+    
+}
+
+.comments span {
+    color: var(--color-accent);
+}

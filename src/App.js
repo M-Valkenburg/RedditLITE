@@ -8,7 +8,10 @@ function App() {
     <div className="App">
       <Header />
       <div className="container">
-        <Card />
+        <div className="posts">
+          <Card />
+          <Card />
+        </div>
       </div>
     </div>
   );
