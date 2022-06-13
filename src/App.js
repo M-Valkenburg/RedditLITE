@@ -2,8 +2,9 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Card from './components/Card/Card';
+import Subreddits from './components/Subreddits/Subreddits';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <Header />
@@ -12,9 +13,8 @@ function App() {
           <Card />
           <Card />
         </div>
+        <Subreddits />
       </div>
     </div>
   );
-}
-
-export default App;
+};

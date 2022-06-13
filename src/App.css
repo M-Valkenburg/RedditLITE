@@ -23,9 +23,9 @@ body {
 .container {
   height: 800px;
   margin-top: 50px;
-  width: 1000px;
   display: grid;
   grid-template-columns: 2fr 1fr;
+  grid-gap: 30px;
 }
 
 .posts {
