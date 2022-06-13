@@ -50,11 +50,3 @@ h2 {
 .comments {
     cursor: pointer;
 }
-
-.votes span {
-    
-}
-
-.comments span {
-    color: var(--color-accent);
-}
