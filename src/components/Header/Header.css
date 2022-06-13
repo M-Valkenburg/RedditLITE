@@ -26,7 +26,7 @@ header {
 .logo p {
     font-size: 24px;
     font-weight: bold;
-    color: var(--color-text);
+    color: var(--color-text-light);
 }
 
 .logo span {
@@ -49,6 +49,7 @@ header {
     border: none !important;
     margin-right: 5px;
     font-size: 18px;
+    color: var(--color-text-light);
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
 }
@@ -75,6 +76,6 @@ header {
     background-color: var(--color-header);
     border: none;
     font-size: 20px;
-    color: var(--color-text);
+    color: var(--color-text-light);
     margin-top: 1px;
 }
