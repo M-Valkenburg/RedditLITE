@@ -1,0 +1,40 @@
+.subreddits {
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(
+                    var(--color-accent) 0%, 
+                    var(--color-accent) 10%,
+                    var(--color-header) 10%,
+                    var(--color-card) 10.5%);
+    box-shadow: 0 5px 10px var(--color-header);
+    border-radius: 10px;
+    margin: 15px 0;
+    height: 500px;
+    overflow: hidden;
+    scroll-margin-top: 100px;
+}
+
+h3 {
+    font-size: 1.3rem;
+    text-align: center;
+    color: var(--color-text-light);
+    text-shadow: 2.5px 2.5px 2.5px var(--color-header);
+    letter-spacing: 2px;
+    width: 100%;
+    margin: 0;
+    padding: 10px;
+}
+
+.subs p {
+    text-align: center;
+    font-weight: 600;
+    margin: 13px 5px;
+    display: block;
+    cursor: pointer;
+}
+
+hr {
+    margin: 0 10px;
+}
