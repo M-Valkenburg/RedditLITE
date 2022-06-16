@@ -15,7 +15,7 @@ export const fetchPosts = createAsyncThunk(
 );
 
 export const redditSlice = createSlice({
-    name: 'posts',
+    name: 'reddit',
     initialState: {
         posts: [],
         isLoading: false,
@@ -39,7 +39,7 @@ export const redditSlice = createSlice({
     }
 });
 
-export const selectPosts = (state) => state.posts.posts;
-export const isLoading = (state) => state.posts.isLoading;
-export const hasError = (state) => state.posts.hasError;
+export const selectPosts = (state) => state.reddit.posts;
+export const isLoading = (state) => state.reddit.isLoading;
+export const hasError = (state) => state.reddit.hasError;
 export default redditSlice.reducer;
