@@ -1,15 +1,25 @@
 import React from 'react';
 import './Card.css';
 import { FaArrowUp, FaArrowDown, FaComment } from 'react-icons/fa'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 
 export default function Card(props) {
     const { post } = props;
+
+
+    let content;
+    if (post.selftext !== "") {
+        content = <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
+    } else if (post.thumbnail !== "self") {
+        content = <img src={post.thumbnail} alt="" height={post.thumbnail_height} width={post.thumbnail_width}/>
+    }
 
     return (
             <div className="card">
                 <h2>{post.title}</h2>
                 <span className="timestamp"><strong>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
-                <img src="./images/logo.png" alt="Test"/>
+                {content}
                 <div className="post-info">
                     <div className="votes">
                         <span><FaArrowUp /></span>
