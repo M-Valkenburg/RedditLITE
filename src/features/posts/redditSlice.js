@@ -4,7 +4,7 @@ export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
     async () => {
         try {
-            const response = await fetch(`https://reddit.com/r/popular.json`);
+            const response = await fetch(`https://reddit.com/r/games.json`);
             const json = await response.json();
             const data = json.data.children.map(post => post.data);
             return data;
