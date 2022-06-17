@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/redditLITE/static/css/main.1796e229.css",
-    "main.js": "/redditLITE/static/js/main.7e1f0c06.js",
-    "index.html": "/redditLITE/index.html",
-    "main.1796e229.css.map": "/redditLITE/static/css/main.1796e229.css.map",
-    "main.7e1f0c06.js.map": "/redditLITE/static/js/main.7e1f0c06.js.map"
+    "main.css": "/RedditLITE/static/css/main.1796e229.css",
+    "main.js": "/RedditLITE/static/js/main.7e1f0c06.js",
+    "index.html": "/RedditLITE/index.html",
+    "main.1796e229.css.map": "/RedditLITE/static/css/main.1796e229.css.map",
+    "main.7e1f0c06.js.map": "/RedditLITE/static/js/main.7e1f0c06.js.map"
   },
   "entrypoints": [
     "static/css/main.1796e229.css",
