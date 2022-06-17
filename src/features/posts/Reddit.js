@@ -23,11 +23,18 @@ export default function Reddit() {
         return <h2>Uh oh, something has gone wrong!<br/>Unable to load posts.</h2>
     }
 
-    const displayedPosts = posts?.map(post => <Card key={post.id} post={post}/>)
+    const displayedPosts = posts?.map(post => {
+        return(
+            <Card 
+                key={post.id} 
+                post={post}
+            />
+        )
+    })
 
     return (
         <div>
-            {posts}
+            {displayedPosts}
         </div>      
     )
 };
