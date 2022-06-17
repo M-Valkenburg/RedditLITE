@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../../components/Card/Card';
-import { selectPosts, isLoading, hasError } from './redditSlice';
+import { fetchPosts, selectPosts, isLoading, hasError } from './redditSlice';
 
 
 export default function Reddit() {
@@ -12,7 +12,7 @@ export default function Reddit() {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(selectPosts());
+        dispatch(fetchPosts());
     }, [dispatch])
 
     if (loadingPosts) {
@@ -23,18 +23,11 @@ export default function Reddit() {
         return <h2>Uh oh, something has gone wrong!<br/>Unable to load posts.</h2>
     }
 
-    const displayedPosts = posts.map(post => {
-        return (
-            <Card 
-                key={post.id}
-                post={post}
-            />
-        )
-    })
+    const displayedPosts = posts?.map(post => <Card key={post.id} post={post}/>)
 
     return (
         <div>
-            {displayedPosts}
+            {posts}
         </div>      
     )
 };
