@@ -3,14 +3,9 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetchPosts = createAsyncThunk(
     'posts/fetchPosts',
     async () => {
-        try {
-            const response = await fetch(`https://reddit.com/r/games.json`);
-            const json = await response.json();
-            const data = json.data.children.map(post => post.data);
-            return data;
-        } catch (error) {
-            console.log(error);
-        }
+        const response = await fetch(`https://www.reddit.com/r/games.json`);
+        const json = await response.json();
+        return json.data.children.map((post) => post.data);
     }
 );
 
