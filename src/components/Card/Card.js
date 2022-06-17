@@ -3,21 +3,22 @@ import './Card.css';
 import { FaArrowUp, FaArrowDown, FaComment } from 'react-icons/fa'
 
 export default function Card(props) {
+    const { post } = props;
 
     return (
             <div className="card">
-                <h2>{props.title}</h2>
-                <span className="timestamp"><strong>&#xB7;</strong> {props.author_fullname}- {props.approved_at_utc}</span>
+                <h2>{post.title}</h2>
+                <span className="timestamp"><strong>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
                 <img src="./images/logo.png" alt="Test"/>
                 <div className="post-info">
                     <div className="votes">
                         <span><FaArrowUp /></span>
-                        <p>&nbsp;&nbsp;{props.ups}&nbsp;&nbsp;</p>
+                        <p>&nbsp;&nbsp;{post.ups}&nbsp;&nbsp;</p>
                         <span><FaArrowDown /></span>
                     </div>
                     <div className="comments">
                         <span><FaComment /></span>
-                        <p>&nbsp;34&nbsp;</p>
+                        <p>&nbsp;{post.num_comments}&nbsp;</p>
                     </div>
                 </div>
             </div>
