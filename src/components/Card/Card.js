@@ -13,7 +13,7 @@ export default function Card(props) {
                 <div className="post-info">
                     <div className="votes">
                         <span><FaArrowUp /></span>
-                        <p>&nbsp;&nbsp;{post.ups}&nbsp;&nbsp;</p>
+                        <p>&nbsp;{post.ups}&nbsp;</p>
                         <span><FaArrowDown /></span>
                     </div>
                     <div className="comments">
