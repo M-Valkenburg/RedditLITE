@@ -6,6 +6,7 @@
     box-shadow: 0 5px 10px var(--color-header);
     border-radius: 10px;
     margin: 15px 0;
+    max-width: 700px;
 }
 
 h2 {
@@ -50,4 +51,19 @@ h2 {
 .votes span,
 .comments {
     cursor: pointer;
+}
+
+.content-text {
+    overflow-x: scroll;   
+}
+
+th, td {
+    padding: 5px;
+}
+
+table,
+th,
+td {
+    border: 1px solid #b3b3b3;
+    border-collapse: collapse;
 }
