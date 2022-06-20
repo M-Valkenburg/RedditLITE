@@ -11,6 +11,7 @@ export default function Card(props) {
     if (post.selftext !== "") {
         content = <div className="text-container">
                     <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
+                    <div className="text-overlay"></div>
                   </div>
     }
    
