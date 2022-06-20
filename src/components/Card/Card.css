@@ -6,7 +6,7 @@
     box-shadow: 0 5px 10px var(--color-header);
     border-radius: 10px;
     margin: 15px 0;
-    max-width: 700px;
+    max-width: 600px;
 }
 
 h2 {
@@ -54,7 +54,8 @@ h2 {
 }
 
 .content-text {
-    overflow-x: scroll;   
+    overflow-x: scroll;
+    margin-top: -20px;
 }
 
 th, td {
@@ -66,4 +67,14 @@ th,
 td {
     border: 1px solid #b3b3b3;
     border-collapse: collapse;
+}
+
+.content-link {
+    display: inline-flex;
+    grid-gap: 10px;
+}
+
+.content-video {
+    max-height: 500px;
+    background: #000;
 }
