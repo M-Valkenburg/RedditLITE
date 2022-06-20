@@ -1,6 +1,7 @@
 import React from 'react';
 import './Card.css';
 import { FaArrowUp, FaArrowDown, FaComment } from 'react-icons/fa'
+import { FiExternalLink } from 'react-icons/fi'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
@@ -12,28 +13,35 @@ export default function Card(props) {
         content = <div className="text-container">
                     <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
                     <div className="text-wrapper"></div>
-                  </div>
+                </div>
     }
    
     if (post.post_hint === "image") {
-        const url = post.url
-        const regex = new RegExp(/\.(jpe?g|png|gif|bmp|webp)$/i);
-
-        if (regex.test(url)) {
-            content = <img className="content-img" src={post.url} alt=""/>
-        } else {
-            if (post.thumbnail === "default") {
-                content = <a href={post.url} alt={post.title}>{post.url}</a>
-            } else {
-                content = (            
-                    <div className="content-link">
-                        <img src={post.thumbnail} alt=""/>
-                        <a href={post.url} alt={post.title}>{post.url}</a>
-                    </div>
-                )
-            }
-        }
+            content = (
+                <div className="image-container">
+                    <img className="content-img" src={post.url} alt=""/>
+                    <div className="image-wrapper"><span>SEE FULL IMAGE</span></div>
+                </div>
+            )
     }
+
+    if (post.post_hint === "link") {
+        const url = post.url;
+        const trimmedLink = url.replace("https://www.", "").substring(0, 20) + "...";
+
+        if (post.thumbnail === "default") {
+            content = <a href={url} alt={post.title}>{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
+        } else {
+            content = (            
+                <div className="content-link">
+                    <a href={post.url} alt={post.title}>
+                        <img className="link-image" src={post.thumbnail} alt=""/>
+                    </a>
+                    <a href={post.url} alt={post.title}>{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
+                </div>
+            )
+        }
+    }  
 
     if (post.is_video) {
         content = <video className="content-video" src={post.media.reddit_video.fallback_url} controls="on"/>
