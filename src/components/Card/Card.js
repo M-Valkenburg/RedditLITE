@@ -29,7 +29,7 @@ export default function Card(props) {
     }
 
     if (post.is_video) {
-        content = <video src={post.media.reddit_video.fallback_url} controls="on"/>
+        content = <video className="content-video" src={post.media.reddit_video.fallback_url} controls="on"/>
     }
 
     return (
