@@ -27,7 +27,16 @@ export default function Card(props) {
 
     if (post.post_hint === "link") {
         const url = post.url;
-        const trimmedLink = url.replace("https://www.", "").substring(0, 20) + "...";
+        let trimmedLink;
+    
+        if (url.startsWith("https://www.")) {
+            trimmedLink = url.replace("https://www.", "").substring(0, 20) + "...";
+        } else if (url.startsWith("https://www-")) {
+            trimmedLink = url.replace("https://www-", "").substring(0, 20) + "...";
+        } else if (url.startsWith("https://")) {
+            trimmedLink = url.replace("https://", "").substring(0, 20) + "...";
+        }
+
 
         if (post.thumbnail === "default") {
             content = <a href={url} alt={post.title}>{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
