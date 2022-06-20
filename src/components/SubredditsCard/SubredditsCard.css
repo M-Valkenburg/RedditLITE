@@ -1,6 +1,7 @@
 .subreddits {
     position: -webkit-sticky;
     position: sticky;
+    top: 65px;
     display: flex;
     flex-direction: column;
     background: linear-gradient(
@@ -10,7 +11,6 @@
                     var(--color-card) 10.5%);
     box-shadow: 0 5px 10px var(--color-header);
     border-radius: 10px;
-    margin: 15px 0;
     height: 500px;
     overflow: hidden;
     scroll-margin-top: 100px;
