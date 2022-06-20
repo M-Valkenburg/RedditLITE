@@ -11,11 +11,11 @@ export default function Card(props) {
     if (post.selftext !== "") {
         content = <div className="text-container">
                     <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
-                    <div className="text-overlay"></div>
+                    <div className="text-wrapper"></div>
                   </div>
     }
    
-    if (post.thumbnail !== "self") {
+    if (post.post_hint === "image") {
         const url = post.url
         const regex = new RegExp(/\.(jpe?g|png|gif|bmp|webp)$/i);
 
@@ -41,7 +41,7 @@ export default function Card(props) {
 
     return (
             <div className="card">
-                <h2>{post.title}</h2>
+                {(post.over_18) ? <h2>{post.title} <span className="nsfw">nsfw</span></h2> : <h2>{post.title}</h2>}
                 <span className="timestamp"><strong>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
                 {content}
                 <div className="post-info">
