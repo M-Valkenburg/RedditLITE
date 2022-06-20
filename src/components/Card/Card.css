@@ -9,7 +9,7 @@
     max-width: 600px;
 }
 
-h2 {
+.card h2 {
     font-family: sans-serif;
     font-size: 1.3rem;
     font-weight: 800;
@@ -53,9 +53,25 @@ h2 {
     cursor: pointer;
 }
 
+.text-container {
+    position: relative;
+    max-height: 200px;
+    margin-top: -20px;
+    overflow: hidden;
+}
+
 .content-text {
     overflow-x: scroll;
-    margin-top: -20px;
+}
+
+.text-overlay {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    background-image: -webkit-linear-gradient(
+                        transparent 70%, 
+                        var(--color-card) 100%);
 }
 
 th, td {
