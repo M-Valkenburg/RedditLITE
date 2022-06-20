@@ -9,7 +9,9 @@ export default function Card(props) {
     let content;
 
     if (post.selftext !== "") {
-        content = <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
+        content = <div className="text-container">
+                    <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
+                  </div>
     }
    
     if (post.thumbnail !== "self") {
@@ -19,12 +21,16 @@ export default function Card(props) {
         if (regex.test(url)) {
             content = <img className="content-img" src={post.url} alt=""/>
         } else {
-            content = (            
-                <div className="content-link">
-                    <img src={post.thumbnail} alt=""/>
-                    <a href={post.url} alt={post.title}>{post.url}</a>
-                </div>
-            )
+            if (post.thumbnail === "default") {
+                content = <a href={post.url} alt={post.title}>{post.url}</a>
+            } else {
+                content = (            
+                    <div className="content-link">
+                        <img src={post.thumbnail} alt=""/>
+                        <a href={post.url} alt={post.title}>{post.url}</a>
+                    </div>
+                )
+            }
         }
     }
 
