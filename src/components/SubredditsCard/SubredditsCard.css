@@ -17,7 +17,7 @@
     width: 300px;
 }
 
-h3 {
+.subreddits h3 {
     font-size: 1.3rem;
     text-align: center;
     color: var(--color-text-light);
