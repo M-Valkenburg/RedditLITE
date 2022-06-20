@@ -17,6 +17,17 @@
     margin-bottom: -4px;
 }
 
+.nsfw {
+    width: 40px;
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 400;
+    color: red;
+    border: 1px solid red;
+    border-radius: 5px;
+    padding: 2px;
+}
+
 .timestamp,
 .timestamp strong {
     font-size: .9rem;
@@ -85,23 +96,63 @@ td {
     border-collapse: collapse;
 }
 
+.image-container {
+    position: relative;
+    max-height: 500px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.content-img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 10px;
+}
+
+.image-wrapper span {
+    width: 200px;
+    font-size: .9rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--color-text-light);
+    background: rgba(1, 1, 1,.75);
+    border-radius: 5px;
+    padding: 5px;
+}
+
 .content-link {
     display: inline-flex;
     grid-gap: 10px;
+    overflow: hidden;
+}
+
+.content-link a {
+    color: var(--color-link);
+    text-decoration: none;
+}
+
+.link-image {
+    max-height: 140px;
+    border: 1px solid var(--color-link);
+    border-radius: 5px;
+}
+
+.link-icon {
+    margin-top: 5px;
 }
 
 .content-video {
     max-height: 500px;
     background: #000;
-}
-
-.nsfw {
-    width: 40px;
-    text-align: center;
-    font-size: .8rem;
-    font-weight: 400;
-    color: red;
-    border: 1px solid red;
-    border-radius: 5px;
-    padding: 2px;
 }
