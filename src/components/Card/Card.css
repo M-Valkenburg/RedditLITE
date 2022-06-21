@@ -174,12 +174,16 @@ td {
 .video-container{
     position: relative;
     max-height: 500px;
-    width: 100%; 
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background: #000;
 }
 
 .content-video {
+    position: relative;
     max-height: 500px;
-    background: #000;
+    max-width: 100%;
 }
 
 .nsfw-content {
