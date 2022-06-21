@@ -35,6 +35,13 @@ header {
     color: var(--color-accent);
 }
 
+@media only screen and (max-width: 615px) {
+    .logo p,
+    .logo span {
+        text-indent: -9999px; 
+    }
+}
+
 .search {
     display: flex;
     flex-direction: row;
@@ -74,6 +81,12 @@ header {
 @media only screen and (max-width: 600px) {
     .search input:focus {
         width: 200px;
+    }   
+}
+
+@media only screen and (max-width: 345px) {
+    .search input:focus {
+        width: 150px;
     }   
 }
 

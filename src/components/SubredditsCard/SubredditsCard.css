@@ -13,8 +13,19 @@
     border-radius: 10px;
     height: 480px;
     overflow: hidden;
-    scroll-margin-top: 100px;
     width: 300px;
+}
+
+@media only screen and (max-width: 940px) {
+    .subreddits {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .subreddits {
+        width: 95vw;
+    }
 }
 
 .subreddits h3 {

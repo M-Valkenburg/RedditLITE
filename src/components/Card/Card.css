@@ -9,6 +9,18 @@
     max-width: 600px;
 }
 
+@media only screen and (max-width: 940px) {
+    .card {
+        width: auto;
+    }
+}
+
+@media only screen and (max-width: 615px) {
+    .card {
+        width: 95vw;
+    }
+}
+
 .card h2 {
     font-size: 1.2rem;
     font-weight: 800;
