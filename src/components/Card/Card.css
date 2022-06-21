@@ -31,12 +31,12 @@
 .nsfw-tag {
     width: 40px;
     text-align: center;
-    font-size: .8rem;
+    font-size: .9rem;
     font-weight: 400;
     color: red;
     border: 1px solid red;
     border-radius: 5px;
-    padding: 2px;
+    padding: 1px 3px;
 }
 
 .header-info,
@@ -153,6 +153,7 @@ td {
 }
 
 .thumbnail-container {
+    position: relative;
     max-height: 78px;
     max-width: 140px;
     overflow: hidden;
