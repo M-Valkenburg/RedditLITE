@@ -6,12 +6,12 @@
     flex-direction: column;
     background: linear-gradient(
                     var(--color-accent) 0%, 
-                    var(--color-accent) 10%,
-                    var(--color-header) 10%,
-                    var(--color-card) 10.5%);
+                    var(--color-accent) 9%,
+                    var(--color-header) 9%,
+                    var(--color-card) 9.5%);
     box-shadow: 0 5px 10px var(--color-header);
     border-radius: 10px;
-    height: 500px;
+    height: 480px;
     overflow: hidden;
     scroll-margin-top: 100px;
     width: 300px;
