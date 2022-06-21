@@ -1,0 +1,21 @@
+.loading-error {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: var(--color-card);
+    box-shadow: 0 5px 10px var(--color-header);
+    border-radius: 10px;
+    margin: 15px 0;
+    max-width: 600px;
+    align-items: center;
+    text-align: center;
+}
+
+.loading-error h2 {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.loading-error img {
+    width: 65%
+}

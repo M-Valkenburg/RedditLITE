@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../../components/Card/Card';
 import Loader from '../../components/Loader/Loader';
+import LoadingError from '../../components/LoadingError/LoadingError';
 import { fetchPosts, selectPosts, isLoading, hasError } from './redditSlice';
 
 
@@ -28,7 +29,7 @@ export default function Reddit() {
     return (
         <div>
             {loadingPosts && <Loader />}
-            {failedLoading && <h2>Uh oh, something has gone wrong!<br/>Unable to load posts.</h2>}
+            {failedLoading && <LoadingError />}
             {displayedPosts}
         </div>      
     )
