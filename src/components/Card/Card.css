@@ -124,7 +124,7 @@ td {
     position: absolute;
     height: 100%;
     width: 100%;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -170,7 +170,21 @@ td {
     margin-top: 5px;
 }
 
+.video-container{
+    position: relative;
+    max-height: 500px;
+    width: 100%; 
+}
+
 .content-video {
     max-height: 500px;
     background: #000;
+}
+
+.nsfw-content {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    backdrop-filter: blur(50px);
 }

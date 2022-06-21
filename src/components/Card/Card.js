@@ -20,7 +20,8 @@ export default function Card(props) {
             content = (
                 <div className="image-container">
                     <img className="content-img" src={post.url} alt=""/>
-                    <div className="image-overlay"><span>SEE FULL IMAGE</span></div>
+                    {post.over_18 && <div className="nsfw-content"></div>}
+                    <div className="image-overlay"><span>SEE FULL IMAGE</span></div>                 
                 </div>
             )
     }
@@ -46,6 +47,7 @@ export default function Card(props) {
                     <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">
                         <div className="thumbnail-container">
                             <img className="link-image" src={post.thumbnail} alt=""/>
+                            {post.over_18 && <div className="nsfw-content"></div>}
                         </div>
                     </a>
                     <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
@@ -55,12 +57,17 @@ export default function Card(props) {
     }  
 
     if (post.is_video) {
-        content = <video className="content-video" src={post.media.reddit_video.fallback_url} controls="on"/>
+        content = ( 
+            <div className="video-container">
+                <video className="content-video" src={post.media.reddit_video.fallback_url} controls="on"/>
+                {post.over_18 && <div className="nsfw-content"></div>}
+            </div>
+        )
     }
 
     return (
             <div className="card">
-                {(post.over_18) ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
+                {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
                 <span className="header-info"><strong>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
                 {content}
                 <div className="post-info">
