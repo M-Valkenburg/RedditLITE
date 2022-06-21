@@ -39,14 +39,14 @@ export default function Card(props) {
 
 
         if (post.thumbnail === "default") {
-            content = <a target="_blank" href={url} alt={post.title}>{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
+            content = <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
         } else {
             content = (            
                 <div className="content-link">
-                    <a target="_blank" href={url} alt={post.title}>
+                    <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">
                         <img className="link-image" src={post.thumbnail} alt=""/>
                     </a>
-                    <a target="_blank" href={url} alt={post.title}>{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
+                    <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
                 </div>
             )
         }
