@@ -133,7 +133,6 @@ td {
 
 .content-link {
     display: inline-flex;
-    grid-gap: 10px;
     overflow: hidden;
 }
 
@@ -148,6 +147,7 @@ td {
     overflow: hidden;
     border: 1px solid var(--color-link);
     border-radius: 5px;
+    margin-right: 10px;
 }
 
 .link-image {
