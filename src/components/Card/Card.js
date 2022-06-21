@@ -61,7 +61,7 @@ export default function Card(props) {
     return (
             <div className="card">
                 {(post.over_18) ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
-                <span className="timestamp"><strong>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
+                <span className="header-info"><strong>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
                 {content}
                 <div className="post-info">
                     <div className="votes">
