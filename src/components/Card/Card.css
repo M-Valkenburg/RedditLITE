@@ -142,12 +142,12 @@ td {
     padding: 5px;
 }
 
-.content-link {
+.link-container {
     display: inline-flex;
     overflow: hidden;
 }
 
-.content-link a {
+a {
     color: var(--color-link);
     text-decoration: none;
 }

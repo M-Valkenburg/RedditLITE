@@ -43,7 +43,7 @@ export default function Card(props) {
             content = <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
         } else {
             content = (            
-                <div className="content-link">
+                <div className="link-container">
                     <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">
                         <div className="thumbnail-container">
                             <img className="link-image" src={post.thumbnail} alt=""/>
