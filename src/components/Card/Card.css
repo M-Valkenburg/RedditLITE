@@ -75,7 +75,7 @@
     overflow-x: scroll;
 }
 
-.text-wrapper {
+.text-overlay {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -120,7 +120,7 @@ td {
     padding-bottom: 10px;
 }
 
-.image-woverlay span {
+.image-overlay span {
     width: 200px;
     font-size: .9rem;
     font-weight: 600;
