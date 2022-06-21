@@ -26,7 +26,7 @@ export default function Card(props) {
             )
     }
 
-    if (post.post_hint === "link" || post.url.includes('/gallery/')) {
+    if (post.post_hint === "link" || post.url.includes('/gallery/') || post.url.includes("https://www.youtube.com/")) {
         const url = post.url;
         let trimmedLink;
     
