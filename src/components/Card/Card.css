@@ -109,7 +109,7 @@ td {
     height: 100%;
 }
 
-.image-wrapper {
+.image-overlay {
     position: absolute;
     height: 100%;
     width: 100%;
@@ -120,7 +120,7 @@ td {
     padding-bottom: 10px;
 }
 
-.image-wrapper span {
+.image-woverlay span {
     width: 200px;
     font-size: .9rem;
     font-weight: 600;
@@ -142,10 +142,17 @@ td {
     text-decoration: none;
 }
 
-.link-image {
-    max-height: 140px;
+.thumbnail-container {
+    max-height: 78px;
+    max-width: 140px;
+    overflow: hidden;
     border: 1px solid var(--color-link);
     border-radius: 5px;
+}
+
+.link-image {
+    height: 100%;
+    width: 100%;
 }
 
 .link-icon {

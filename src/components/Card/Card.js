@@ -12,7 +12,7 @@ export default function Card(props) {
     if (post.selftext !== "") {
         content = <div className="text-container">
                     <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
-                    <div className="text-wrapper"></div>
+                    <div className="text-overlay"></div>
                 </div>
     }
    
@@ -20,7 +20,7 @@ export default function Card(props) {
             content = (
                 <div className="image-container">
                     <img className="content-img" src={post.url} alt=""/>
-                    <div className="image-wrapper"><span>SEE FULL IMAGE</span></div>
+                    <div className="image-overlay"><span>SEE FULL IMAGE</span></div>
                 </div>
             )
     }
@@ -44,7 +44,9 @@ export default function Card(props) {
             content = (            
                 <div className="content-link">
                     <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">
-                        <img className="link-image" src={post.thumbnail} alt=""/>
+                        <div className="thumbnail-container">
+                            <img className="link-image" src={post.thumbnail} alt=""/>
+                        </div>
                     </a>
                     <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
                 </div>
