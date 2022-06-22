@@ -5,8 +5,7 @@ import { FiExternalLink } from 'react-icons/fi'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-export default function Card(props) {
-    const { post } = props;
+export default function Card({ post }) {
     let content;
 
     if (post.selftext !== "") {
