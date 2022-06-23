@@ -45,6 +45,10 @@
     margin: 10px 0 15px 0; 
 }
 
+.header-info strong {
+    cursor: pointer;
+}
+
 .post-info {
     display: flex;
     flex-direction: row;
