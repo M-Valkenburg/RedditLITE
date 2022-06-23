@@ -19,13 +19,13 @@ export default function Card({ post }) {
     }
    
     if (post.post_hint === "image") {
-            content = (
-                <div className="image-container">
-                    <img className="content-img" src={post.url} alt=""/>
-                    {post.over_18 && <div className="nsfw-content"></div>}
-                    <div className="image-overlay"><span>SEE FULL IMAGE</span></div>                 
-                </div>
-            )
+        content = (
+            <div className="image-container">
+                <img className="content-img" src={post.url} alt=""/>
+                {post.over_18 && <div className="nsfw-content"></div>}
+                <div className="image-overlay"><span>SEE FULL IMAGE</span></div>       
+            </div>
+        )
     }
 
     if (post.post_hint === "link" || post.url.includes('/gallery/') || post.post_hint === "rich:video") {
@@ -68,21 +68,21 @@ export default function Card({ post }) {
     }
 
     return (
-            <div className="card">
-                {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
-                <span className="header-info"><strong onClick={() => dispatch(setSubreddit(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
-                {content}
-                <div className="post-info">
-                    <div className="votes">
-                        <span><FaArrowUp /></span>
-                        <p>&nbsp;{post.ups}&nbsp;</p>
-                        <span><FaArrowDown /></span>
-                    </div>
-                    <div className="comments">
-                        <span><FaComment /></span>
-                        <p>&nbsp;{post.num_comments}&nbsp;</p>
-                    </div>
+        <div className="card">
+            {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
+            <span className="header-info"><strong onClick={() => dispatch(setSubreddit(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
+            {content}
+            <div className="post-info">
+                <div className="votes">
+                    <span><FaArrowUp /></span>
+                    <p>&nbsp;{post.ups}&nbsp;</p>
+                    <span><FaArrowDown /></span>
+                </div>
+                <div className="comments">
+                    <span><FaComment /></span>
+                    <p>&nbsp;{post.num_comments}&nbsp;</p>
                 </div>
             </div>
+        </div>
     )
 };
