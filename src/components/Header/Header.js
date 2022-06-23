@@ -1,12 +1,16 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import "./Header.css";
 import { FaSearch } from 'react-icons/fa';
 import logo from '../../images/logo.png';
+import { setSubreddit } from '../../features/posts/redditSlice';
 
 const Header = () => {
+    const dispatch = useDispatch();
+    
     return (
         <header>
-            <div className="logo">
+            <div className="logo" onClick={e => dispatch(setSubreddit('popular'))}>
                 <img src={logo} alt="Reddit logo"/>
                 <p>Reddit<span>LITE</span></p>
             </div>
