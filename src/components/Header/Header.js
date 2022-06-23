@@ -10,7 +10,7 @@ const Header = () => {
     
     return (
         <header>
-            <div className="logo" onClick={e => dispatch(setSubreddit('popular'))}>
+            <div className="logo" onClick={() => dispatch(setSubreddit('popular'))}>
                 <img src={logo} alt="Reddit logo"/>
                 <p>Reddit<span>LITE</span></p>
             </div>
