@@ -1,11 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 import './Card.css';
 import { FaArrowUp, FaArrowDown, FaComment } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { setSubreddit } from '../../features/posts/redditSlice';
 
 export default function Card({ post }) {
+    const dispatch = useDispatch();
     let content;
 
     if (post.selftext !== "") {
@@ -67,7 +70,7 @@ export default function Card({ post }) {
     return (
             <div className="card">
                 {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
-                <span className="header-info"><strong>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
+                <span className="header-info"><strong onClick={() => dispatch(setSubreddit(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
                 {content}
                 <div className="post-info">
                     <div className="votes">
