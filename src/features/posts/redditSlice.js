@@ -21,6 +21,7 @@ export const redditSlice = createSlice({
         setSubreddit(state, action) {
             state.subreddit = action.payload;
             state.searchTerm = '';
+            window.scrollTo(0, 0);
         },     
     },
     extraReducers: {
