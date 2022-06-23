@@ -49,6 +49,11 @@
     cursor: pointer;
 }
 
+.header-info strong:hover,
+.header-info strong:active {
+    color: var(--color-accent);
+}
+
 .post-info {
     display: flex;
     flex-direction: row;
