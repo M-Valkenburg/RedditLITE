@@ -3,19 +3,19 @@ import { useSelector, useDispatch } from 'react-redux';
 import Card from '../../components/Card/Card';
 import Loader from '../../components/Loader/Loader';
 import LoadingError from '../../components/LoadingError/LoadingError';
-import { fetchPosts, selectPosts, isLoading, hasError } from './redditSlice';
-
+import { fetchPosts, selectPosts } from './redditSlice';
 
 export default function Reddit() {
     const posts = useSelector(selectPosts);
-    const loadingPosts = useSelector(isLoading);
-    const failedLoading = useSelector(hasError);
+
+    const reddit = useSelector((state) => state.reddit);
+    const { isLoading, hasError, subreddit } = reddit;
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchPosts());
-    }, [dispatch])
+        dispatch(fetchPosts(subreddit));
+    }, [dispatch, subreddit])
 
     const displayedPosts = posts?.map(post => {
         return(
@@ -28,8 +28,8 @@ export default function Reddit() {
 
     return (
         <div>
-            {loadingPosts && <Loader />}
-            {failedLoading && <LoadingError />}
+            {isLoading && <Loader />}
+            {hasError && <LoadingError />}
             {displayedPosts}
         </div>      
     )
