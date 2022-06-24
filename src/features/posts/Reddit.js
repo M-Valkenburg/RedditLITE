@@ -18,7 +18,7 @@ export default function Reddit() {
     }, [dispatch, subreddit])
 
     const displayedPosts = posts?.map(post => {
-        return(
+        return (
             <Card 
                 key={post.id} 
                 post={post}
@@ -28,9 +28,12 @@ export default function Reddit() {
 
     return (
         <div>
-            {isLoading && <Loader />}
-            {hasError && <LoadingError />}
-            {displayedPosts}
+            {isLoading 
+                ? <Loader /> 
+                : hasError 
+                    ? <LoadingError /> 
+                    : displayedPosts
+            }
         </div>      
     )
 };
