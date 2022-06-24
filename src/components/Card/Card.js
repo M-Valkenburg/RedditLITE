@@ -61,10 +61,10 @@ export default function Card({ post }) {
         }
     }  
 
-    if (post.is_video) {
+    if (post.post_hint === 'hosted:video') {
         content = ( 
             <div className="video-container">
-                <video className="content-video" src={post.media.reddit_video.fallback_url} controls="on"/>
+                <video className="content-video" src={post.media.reddit_video.fallback_url} controls/>
                 {post.over_18 && <div className="nsfw-content"></div>}
             </div>
         )
