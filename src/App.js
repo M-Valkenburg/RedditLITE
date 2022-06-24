@@ -2,8 +2,7 @@ import React from 'react';
 import './App.css';
 import Header from './components/Header/Header';
 import Reddit from './features/posts/Reddit';
-//import Card from './components/Card/Card';
-import SubredditsCard from './components/SubredditsCard/SubredditsCard';
+import Subreddits from './features/subreddits/Subreddits';
 
 export default function App() {
   return (
@@ -13,7 +12,7 @@ export default function App() {
         <section className="posts">
           <Reddit />
         </section>
-        <SubredditsCard />
+        <Subreddits />
       </div>
     </div>
   );
