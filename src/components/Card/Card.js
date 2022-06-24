@@ -5,6 +5,7 @@ import { FaArrowUp, FaArrowDown, FaComment } from 'react-icons/fa'
 import { FiExternalLink } from 'react-icons/fi'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import moment from 'moment';
 import { setSubreddit } from '../../features/posts/redditSlice';
 
 export default function Card({ post }) {
@@ -82,6 +83,7 @@ export default function Card({ post }) {
                     <p>&nbsp;{post.ups}&nbsp;</p>
                     <span><FaArrowDown /></span>
                 </div>
+                <span className="time-ago">{moment.unix(post.created_utc).fromNow()}</span>
                 <div className="comments">
                     <span><FaComment /></span>
                     <p>&nbsp;{post.num_comments}&nbsp;</p>
