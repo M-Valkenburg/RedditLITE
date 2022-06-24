@@ -12,18 +12,20 @@ export default function Card({ post }) {
     let content;
 
     if (post.selftext !== "") {
-        content = <div className="text-container">
-                    <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
-                    <div className="text-overlay"></div>
-                </div>
+        content = (
+            <div className="text-container">
+                <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
+                <div className="text-overlay"></div>
+            </div>
+        )
     }
-   
+ 
     if (post.post_hint === "image") {
         content = (
             <div className="image-container">
                 <img className="content-img" src={post.url} alt=""/>
                 {post.over_18 && <div className="nsfw-content"></div>}
-                <div className="image-overlay"><span>SEE FULL IMAGE</span></div>       
+                <div className="image-overlay"><span>SEE FULL IMAGE</span></div>
             </div>
         )
     }
@@ -70,7 +72,9 @@ export default function Card({ post }) {
     return (
         <div className="card">
             {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
-            <span className="header-info"><strong onClick={() => dispatch(setSubreddit(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}</span>
+            <span className="header-info">
+                <strong onClick={() => dispatch(setSubreddit(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}
+            </span>
             {content}
             <div className="post-info">
                 <div className="votes">
