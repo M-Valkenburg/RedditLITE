@@ -64,19 +64,17 @@
     margin-top: 15px;
 }
 
+.post-info span,
+.post-info p {
+    font-size: 1rem;
+    margin: 0;
+    margin-top: 5px;
+}
+
 .votes,
 .comments {
     display: inline-flex;
     align-items: center;
-}
-
-.votes span,
-.votes p,
-.comments span,
-.comments p {
-    font-size: 1rem;
-    margin: 0;
-    margin-top: 5px;
 }
 
 .votes span,
