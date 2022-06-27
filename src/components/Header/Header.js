@@ -20,9 +20,12 @@ const Header = () => {
       }, [searchTerm]);
 
     const setSearch = (e) => {
+        if (searchValue.length === 0) {
+            return
+        }
+        
         e.preventDefault();
         dispatch(setSubreddit(searchValue));
-        setSearchValue('');
     };
 
     return (
