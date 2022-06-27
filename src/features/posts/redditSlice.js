@@ -16,13 +16,17 @@ export const redditSlice = createSlice({
         isLoading: false,
         hasError: false,
         subreddit: 'popular',
+        searchTerm: ''
     },
     reducers: {
         setSubreddit(state, action) {
             state.subreddit = action.payload;
             state.searchTerm = '';
             window.scrollTo(0, 0);
-        },     
+        },
+        setSearchTerm(state, action) {
+            state.searchTerm = action.payload;
+        }
     },
     extraReducers: {
         [fetchPosts.pending]: (state) => {
@@ -41,6 +45,6 @@ export const redditSlice = createSlice({
     }
 });
 
-export const { setSubreddit } = redditSlice.actions;
+export const { setSubreddit, setSearchTerm } = redditSlice.actions;
 export const selectPosts = (state) => state.reddit.posts;
 export default redditSlice.reducer;
