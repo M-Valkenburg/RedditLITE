@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import './SubredditsCard.css';
-import Loader from '..//Loader/Loader';
-import LoadingError from '..//LoadingError/LoadingError';
+import SubredditsLoader from '../Loader/SubredditsLoader';
+import LoadingSubsError from '../LoadingError/LoadingSubsError';
 import logo from '../../images/logo.png';
 import { setSubreddit } from '../../features/posts/redditSlice';
 
@@ -30,10 +30,11 @@ export default function Subreddits({ subs }) {
             <h3>Subreddits</h3>
             <ul className="subs">
                 {isLoading
-                    ? <Loader />
+                    ? <SubredditsLoader />
                     : hasError
-                        ? <LoadingError />
-                        : displayedSubs}
+                        ? <LoadingSubsError />
+                        : displayedSubs
+                }
             </ul>
         </div>
     )
