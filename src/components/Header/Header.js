@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import "./Header.css";
 import { FaSearch } from 'react-icons/fa';
 import logo from '../../images/logo.png';
-import { setSubreddit } from '../../features/posts/redditSlice';
+import { setSubreddit, setSearchTerm } from '../../features/posts/redditSlice';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -20,12 +20,8 @@ const Header = () => {
       }, [searchTerm]);
 
     const setSearch = (e) => {
-        if (searchValue.length === 0) {
-            return
-        }
-        
         e.preventDefault();
-        dispatch(setSubreddit(searchValue));
+        dispatch(setSearchTerm(searchValue));
     };
 
     return (
@@ -37,8 +33,8 @@ const Header = () => {
             <div className="search">
                 <form onSubmit={setSearch}>
                     <input type="text" placeholder="Search..." value={searchValue} onChange={getSearch}/>
-                </form>
-                <button type="submit" onSubmit={setSearch}><FaSearch /></button> 
+                    <button type="submit" onSubmit={setSearch}><FaSearch /></button> 
+                </form>  
             </div>
         </header>
     )
