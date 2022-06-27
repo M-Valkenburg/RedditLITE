@@ -44,7 +44,7 @@ export default function Card({ post }) {
         }
 
 
-        if (post.thumbnail === "default") {
+        if (post.thumbnail === "default" || post.thumbnail === "nsfw") {
             content = <a target="_blank" href={url} alt={post.title} rel="noreferrer noopener">{trimmedLink}&nbsp;<FiExternalLink className="link-icon"/></a>
         } else {
             content = (            
