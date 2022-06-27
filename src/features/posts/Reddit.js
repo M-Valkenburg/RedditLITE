@@ -18,7 +18,9 @@ export default function Reddit() {
     }, [dispatch, subreddit])
 
     useEffect(() => {
-        dispatch(fetchPosts(searchTerm));
+        if (!searchTerm === '') {
+            dispatch(fetchPosts(searchTerm));
+        }
     }, [dispatch, searchTerm])
 
     const displayedPosts = posts.map(post => {
