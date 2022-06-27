@@ -1,10 +1,12 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import './SubredditsCard.css';
 import logo from '../../images/logo.png';
 import { setSearchTerm } from '../../features/posts/redditSlice';
+import LoadingSubsError from '../LoadingError/LoadingSubsError';
 
 export default function Subreddits({ subs }) {
+    const hasError = useSelector((state) => state.subreddits.hasError);
     const dispatch = useDispatch();
 
     const displayedSubs = subs?.map(sub => {
@@ -24,7 +26,7 @@ export default function Subreddits({ subs }) {
         <div className="subreddits">
             <h3>Subreddits</h3>
             <ul className="subs">
-                {displayedSubs}
+                {hasError ? <LoadingSubsError /> : displayedSubs}
             </ul>
         </div>
     )
