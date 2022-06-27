@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import "./Header.css";
 import { FaSearch } from 'react-icons/fa';
 import logo from '../../images/logo.png';
-import { setSubreddit, setSearchTerm } from '../../features/posts/redditSlice';
+import { setSearchTerm } from '../../features/posts/redditSlice';
 
 const Header = () => {
     const dispatch = useDispatch();
@@ -26,7 +26,7 @@ const Header = () => {
 
     return (
         <header>
-            <div className="logo" onClick={() => dispatch(setSubreddit('popular'))}>
+            <div className="logo" onClick={() => dispatch(setSearchTerm('popular'))}>
                 <img src={logo} alt="Reddit logo"/>
                 <p>Reddit<span>LITE</span></p>
             </div>

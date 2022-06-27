@@ -6,7 +6,7 @@ import { FiExternalLink } from 'react-icons/fi'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import moment from 'moment';
-import { setSubreddit } from '../../features/posts/redditSlice';
+import { setSearchTerm } from '../../features/posts/redditSlice';
 
 export default function Card({ post }) {
     const dispatch = useDispatch();
@@ -74,7 +74,7 @@ export default function Card({ post }) {
         <div className="card">
             {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
             <span className="header-info">
-                <strong onClick={() => dispatch(setSubreddit(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}
+                <strong onClick={() => dispatch(setSearchTerm(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}
             </span>
             {content}
             <div className="post-info">
