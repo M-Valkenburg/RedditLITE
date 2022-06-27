@@ -12,7 +12,7 @@ const Header = () => {
     const [searchValue, setSearchValue] = useState('');
 
     const getSearch = (e) => {
-        setSearchValue(e.target.value);
+        setSearchValue(e.target.value)
     };
 
     useEffect(() => {
@@ -31,7 +31,13 @@ const Header = () => {
                 <p>Reddit<span>LITE</span></p>
             </div>
             <form className="search" onSubmit={setSearch}>
-                <input type="text" placeholder="Search..." value={searchValue} onChange={getSearch}/>
+                <input 
+                    type="text" 
+                    placeholder="Search..." 
+                    value={searchValue} 
+                    onChange={getSearch}
+                    required
+                />
                 <button type="submit" onSubmit={setSearch}><FaSearch /></button> 
             </form>  
         </header>
