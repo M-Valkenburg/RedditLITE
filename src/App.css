@@ -20,6 +20,8 @@ body {
   background-color: var(--color-background);
   display: flex;
   justify-content: center;
+  overflow: -moz-scrollbars-vertical; 
+  overflow-y: scroll;
 }
 
 .container {
