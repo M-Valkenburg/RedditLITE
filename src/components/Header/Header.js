@@ -30,12 +30,10 @@ const Header = () => {
                 <img src={logo} alt="Reddit logo"/>
                 <p>Reddit<span>LITE</span></p>
             </div>
-            <div className="search">
-                <form onSubmit={setSearch}>
-                    <input type="text" placeholder="Search..." value={searchValue} onChange={getSearch}/>
-                    <button type="submit" onSubmit={setSearch}><FaSearch /></button> 
-                </form>  
-            </div>
+            <form className="search" onSubmit={setSearch}>
+                <input type="text" placeholder="Search..." value={searchValue} onChange={getSearch}/>
+                <button type="submit" onSubmit={setSearch}><FaSearch /></button> 
+            </form>  
         </header>
     )
 };
