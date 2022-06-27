@@ -60,6 +60,11 @@
     border-bottom: none;
 }
 
+.subreddits li:hover,
+.subreddits li:active {
+    color: var(--color-accent);
+}
+
 .subreddit-icon {
     height: 30px;
     margin-right: 10px;
