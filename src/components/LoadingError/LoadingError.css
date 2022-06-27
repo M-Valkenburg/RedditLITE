@@ -16,6 +16,10 @@
     font-weight: 800;
 }
 
+.loading-error p {
+    line-height: 25px;
+}
+
 .loading-error img {
-    width: 65%
+    margin: 20px 0;
 }
