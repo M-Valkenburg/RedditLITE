@@ -9,7 +9,7 @@ export default function Reddit() {
     const posts = useSelector(selectPosts);
 
     const reddit = useSelector((state) => state.reddit);
-    const { isLoading, hasError, subreddit } = reddit;
+    const { isLoading, hasError, subreddit, searchTerm } = reddit;
 
     const dispatch = useDispatch();
 
@@ -17,7 +17,11 @@ export default function Reddit() {
         dispatch(fetchPosts(subreddit));
     }, [dispatch, subreddit])
 
-    const displayedPosts = posts?.map(post => {
+    useEffect(() => {
+        dispatch(fetchPosts(searchTerm));
+    }, [dispatch, searchTerm])
+
+    const displayedPosts = posts.map(post => {
         return (
             <Card 
                 key={post.id} 
