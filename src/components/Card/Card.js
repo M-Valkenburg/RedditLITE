@@ -22,11 +22,15 @@ export default function Card({ post }) {
     }
  
     if (post.post_hint === "image") {
+        const toggleNsfw = () => {
+            const div = document.getElementById(post.id);
+            div.style.display = "none";
+        }
 
         content = (
-            <div className="image-container" id="image-container">
+            <div className="image-container" onClick={toggleNsfw}>
                 <img className="content-img" id="image" src={post.url} alt=""/>
-                {post.over_18 && <div className="nsfw-content"></div>}
+                {post.over_18 && <div className="nsfw-content" id={post.id} ><span>nsfw<br/>click to view</span></div>}
             </div>
         )
     }
@@ -59,13 +63,18 @@ export default function Card({ post }) {
                 </div>
             )
         }
-    }  
+    }
 
     if (post.post_hint === 'hosted:video') {
+        const toggleNsfw = () => {
+            const div = document.getElementById(post.id);
+            div.style.display = "none";
+        }
+
         content = ( 
-            <div className="video-container">
+            <div className="video-container" onClick={toggleNsfw}>
                 <video className="content-video" src={post.media.reddit_video.fallback_url} controls/>
-                {post.over_18 && <div className="nsfw-content"></div>}
+                {post.over_18 && <div className="nsfw-content" id={post.id}><span>nsfw<br/>click to view</span></div>}
             </div>
         )
     }
