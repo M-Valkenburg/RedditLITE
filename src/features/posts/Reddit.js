@@ -18,6 +18,9 @@ export default function Reddit() {
     }, [dispatch, subreddit])
 
     useEffect(() => {
+        if (searchTerm === '') {
+            return
+        };
         dispatch(fetchPosts(searchTerm));
     }, [dispatch, searchTerm])
 
