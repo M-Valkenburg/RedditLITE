@@ -12,25 +12,25 @@ export default function Card({ post }) {
     const dispatch = useDispatch();
     let content;
 
+    const toggleOverlay = () => {
+        const div = document.getElementById(post.id);
+        div.style.display = "none";
+    }
+
     if (post.selftext !== "") {
         content = (
-            <div className="text-container">
+            <div className="text-container" onClick={toggleOverlay}>
                 <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
-                <div className="text-overlay"></div>
+                <div className="text-overlay" id={post.id}></div>
             </div>
         )
     }
  
     if (post.post_hint === "image") {
-        const toggleNsfw = () => {
-            const div = document.getElementById(post.id);
-            div.style.display = "none";
-        }
-
         content = (
-            <div className="image-container" onClick={toggleNsfw}>
+            <div className="image-container" onClick={toggleOverlay}>
                 <img className="content-img" id="image" src={post.url} alt=""/>
-                {post.over_18 && <div className="nsfw-content" id={post.id} ><span>nsfw<br/>click to view</span></div>}
+                {post.over_18 && <div className="nsfw-content" id={post.id}><span>nsfw<br/>click to view</span></div>}
             </div>
         )
     }
@@ -66,13 +66,8 @@ export default function Card({ post }) {
     }
 
     if (post.post_hint === 'hosted:video') {
-        const toggleNsfw = () => {
-            const div = document.getElementById(post.id);
-            div.style.display = "none";
-        }
-
         content = ( 
-            <div className="video-container" onClick={toggleNsfw}>
+            <div className="video-container" onClick={toggleOverlay}>
                 <video className="content-video" src={post.media.reddit_video.fallback_url} controls/>
                 {post.over_18 && <div className="nsfw-content" id={post.id}><span>nsfw<br/>click to view</span></div>}
             </div>
