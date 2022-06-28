@@ -34,7 +34,7 @@ const Header = () => {
                 <input 
                     type="text" 
                     placeholder="Search..." 
-                    value={searchValue} 
+                    value={searchTerm} 
                     onChange={getSearch}
                     required
                 />
