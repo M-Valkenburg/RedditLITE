@@ -101,6 +101,7 @@
     background-image: -webkit-linear-gradient(
                         transparent 70%, 
                         var(--color-card) 100%);
+    cursor: pointer;
 }
 
 th, td {
