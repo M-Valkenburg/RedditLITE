@@ -174,4 +174,18 @@ a {
     width: 100%;
     z-index: 1;
     backdrop-filter: blur(50px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.nsfw-content span {
+    font-size: 1.2rem;
+    text-align: center;
+    color: var(--color-text-light);
+    background-color: var(--color-header);
+    padding: 5px;
+    border: 2px solid var(--color-text-light);
+    border-radius: 10px;
 }
