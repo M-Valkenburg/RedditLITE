@@ -18,10 +18,16 @@ export default function Card({ post }) {
     }
 
     if (post.selftext !== "") {
+        const expandText = () => {
+            const div = document.getElementById(post.id + 'text');
+            div.style.overflow = "none";
+            div.style.maxHeight = '100%';
+        }
+
         content = (
-            <div className="text-container" onClick={toggleOverlay}>
+            <div className="text-container" id={post.id + 'text'} onClick={expandText}>
                 <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
-                <div className="text-overlay" id={post.id}></div>
+                <div className="text-overlay" id={post.id} onClick={toggleOverlay}></div>
             </div>
         )
     }
