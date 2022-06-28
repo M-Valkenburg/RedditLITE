@@ -22,11 +22,11 @@ export default function Card({ post }) {
     }
  
     if (post.post_hint === "image") {
+
         content = (
-            <div className="image-container">
-                <img className="content-img" src={post.url} alt=""/>
+            <div className="image-container" id="image-container">
+                <img className="content-img" id="image" src={post.url} alt=""/>
                 {post.over_18 && <div className="nsfw-content"></div>}
-                <div className="image-overlay"><span>SEE FULL IMAGE</span></div>
             </div>
         )
     }
