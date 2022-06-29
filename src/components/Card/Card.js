@@ -42,9 +42,9 @@ export default function Card({ post }) {
             <ContentLoader post={post}/>
             <div className="post-info">
                 <div className="votes">
-                    <span onClick={() => handleVote(1)} className={upvote && 'upvote-active'}><ImArrowUp/></span>
+                    <span onClick={() => handleVote(1)} className={upvote ? 'upvote-active' : ''}><ImArrowUp/></span>
                     <p>&nbsp;{post.ups + vote}&nbsp;</p>
-                    <span onClick={() => handleVote(-1)} className={downvote && 'downvote-active'}><ImArrowDown/></span>
+                    <span onClick={() => handleVote(-1)} className={downvote ? 'downvote-active' : ''}><ImArrowDown/></span>
                 </div>
                 <span className="time-ago">{moment.unix(post.created_utc).fromNow()}</span>
                 <div className="comments">
