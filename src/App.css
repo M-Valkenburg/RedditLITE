@@ -9,10 +9,10 @@
 :root {
   --color-header: #202020;
   --color-background: #707070;
-  --color-card: #f0f0f0;
+  --color-card: #ffffff;
   --color-accent: #2a7f1f;
   --color-text: #101010;
-  --color-text-light: #f0f0f0;
+  --color-text-light: #ffffff;
   --color-link: #1484d6;
 }
 
