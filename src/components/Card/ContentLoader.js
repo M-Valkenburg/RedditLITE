@@ -37,7 +37,7 @@ export default function ContentLoader({ post }) {
     if (post.post_hint === 'hosted:video') {
         return ( 
             <div className="video-container" onClick={toggleOverlay}>
-                <video className="content-video" src={post.media.reddit_video.fallback_url} controls/>
+                <video className="content-video" src={post.media.reddit_video.fallback_url} preload="metadata" controls/>
                 {post.over_18 && <div className="nsfw-content" id={post.id}><span>nsfw<br/>click to view</span></div>}
             </div>
         )
