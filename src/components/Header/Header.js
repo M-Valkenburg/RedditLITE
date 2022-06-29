@@ -38,7 +38,7 @@ const Header = () => {
                     onChange={getSearch}
                     required
                 />
-                <button type="submit" onSubmit={setSearch}><FaSearch /></button> 
+                <button type="submit" aria-label="search subreddits" onSubmit={setSearch}><FaSearch /></button> 
             </form>  
         </header>
     )
