@@ -6,7 +6,7 @@
 }
 
 .content-text {
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .text-overlay {
