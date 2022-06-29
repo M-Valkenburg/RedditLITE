@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import './Card.css';
+import { BsFillPinAngleFill } from 'react-icons/bs';
 import { FaComment } from 'react-icons/fa'
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import moment from 'moment';
@@ -35,7 +36,9 @@ export default function Card({ post }) {
             {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
             <span className="header-info">
                 <strong onClick={() => dispatch(setSearchTerm(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}
+                {post.stickied && <BsFillPinAngleFill className="pinned"/>}
             </span>
+            
             <ContentLoader post={post}/>
             <div className="post-info">
                 <div className="votes">
