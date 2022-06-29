@@ -42,7 +42,7 @@
 .header-info,
 .header-info strong {
     font-size: .9rem;
-    margin: 10px 0 15px 0; 
+    margin: 10px 0 15px 0;
 }
 
 .header-info strong {
@@ -52,6 +52,11 @@
 .header-info strong:hover,
 .header-info strong:active {
     color: var(--color-accent);
+}
+
+.pinned {
+    color: var(--color-accent);
+    float: right;
 }
 
 .post-info {
