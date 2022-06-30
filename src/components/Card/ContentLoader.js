@@ -10,6 +10,10 @@ export default function ContentLoader({ post }) {
         div.style.display = "none";
     }
 
+    if (!post.hint && post.url.includes('www.reddit.com')) {
+        return;
+    }
+
     if (post.selftext !== "") {
         const expandText = () => {
             const div = document.getElementById(post.id + 'text');
