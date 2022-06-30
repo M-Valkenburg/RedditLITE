@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Suspense } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Card from '../../components/Card/Card';
 import Loader from '../../components/Loader/Loader';
 import LoadingError from '../../components/LoadingError/LoadingError';
 import { fetchPosts, selectPosts } from './redditSlice';
+
+const Card = React.lazy(() => import ('../../components/Card/Card'))
 
 export default function Reddit() {
     const posts = useSelector(selectPosts);
@@ -26,10 +27,11 @@ export default function Reddit() {
 
     const displayedPosts = posts.map(post => {
         return (
-            <Card 
-                key={post.id} 
-                post={post}
-            />
+            <Suspense key={post.id} >
+                <Card 
+                    post={post}
+                />
+            </Suspense>
         )
     })
 
