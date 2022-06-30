@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/RedditLITE/static/css/main.9aba2cdc.css",
-    "main.js": "/RedditLITE/static/js/main.6520b3cb.js",
+    "main.css": "/RedditLITE/static/css/main.0e8a2255.css",
+    "main.js": "/RedditLITE/static/js/main.64feed65.js",
     "static/media/error.png": "/RedditLITE/static/media/error.6580dd8cff3013458a74.png",
     "static/media/404.jpg": "/RedditLITE/static/media/404.6356a29f1797a6ca4f13.jpg",
     "static/media/logo.png": "/RedditLITE/static/media/logo.6ad7893b208023a9e17d.png",
     "index.html": "/RedditLITE/index.html",
-    "main.9aba2cdc.css.map": "/RedditLITE/static/css/main.9aba2cdc.css.map",
-    "main.6520b3cb.js.map": "/RedditLITE/static/js/main.6520b3cb.js.map"
+    "main.0e8a2255.css.map": "/RedditLITE/static/css/main.0e8a2255.css.map",
+    "main.64feed65.js.map": "/RedditLITE/static/js/main.64feed65.js.map"
   },
   "entrypoints": [
-    "static/css/main.9aba2cdc.css",
-    "static/js/main.6520b3cb.js"
+    "static/css/main.0e8a2255.css",
+    "static/js/main.64feed65.js"
   ]
 }
