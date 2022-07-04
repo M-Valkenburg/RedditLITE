@@ -97,6 +97,10 @@
     color: red;
 }
 
+.comments:hover {
+    color: var(--color-accent);
+}
+
 .comment-section {
     border: 1px solid lightGrey;
     border-radius: 10px;
