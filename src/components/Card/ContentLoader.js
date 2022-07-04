@@ -10,17 +10,22 @@ export default function ContentLoader({ post }) {
         div.style.display = "none";
     }
 
+    const expandText = () => {
+        const div = document.getElementById(post.id + 'text');
+        div.style.overflow = "none";
+        div.style.maxHeight = '100%';
+    }
+
     if (!post.hint && post.url.includes('www.reddit.com')) {
-        return;
+        return (
+            <div className="text-container" id={post.id + 'text'} onClick={expandText}>
+                <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
+                <div className="text-overlay" id={post.id} onClick={toggleOverlay}></div>
+            </div>
+        )
     }
 
     if (post.selftext !== "") {
-        const expandText = () => {
-            const div = document.getElementById(post.id + 'text');
-            div.style.overflow = "none";
-            div.style.maxHeight = '100%';
-        }
-
         return (
             <div className="text-container" id={post.id + 'text'} onClick={expandText}>
                 <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
@@ -78,4 +83,5 @@ export default function ContentLoader({ post }) {
             )
         }
     }
+
 };
