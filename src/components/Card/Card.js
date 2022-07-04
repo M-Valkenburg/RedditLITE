@@ -1,14 +1,16 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import './Card.css';
 import { BsFillPinAngleFill } from 'react-icons/bs';
 import { FaComment } from 'react-icons/fa'
 import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import moment from 'moment';
 import ContentLoader from './ContentLoader';
-import { setSearchTerm } from '../../features/posts/redditSlice';
+import Comment from './Comment';
+import LoaderSmall from '../Loader/LoaderSmall';
+import { setSearchTerm, selectComments } from '../../features/posts/redditSlice';
 
-export default function Card({ post }) {
+export default function Card({ post, loadComments }) {
     const dispatch = useDispatch();
 
     const [ vote, setVote ] = useState(0);
@@ -25,11 +27,25 @@ export default function Card({ post }) {
             setDownvote(true);
             setUpvote(false);
         }
-    } 
+    }
 
-    useEffect(() => {
-        setVote(vote);
-    }, [vote]);
+    const loading = useSelector((state) => state.reddit.commentsLoading);
+
+    const toggleComments = () => {
+        const div = document.getElementById(post.id + 'comments');
+        loadComments(post.permalink, post.id);
+        div.style.display = "initial";
+    }
+
+    const comments = useSelector(selectComments);
+    const displayedComments = comments.map(comment => {
+        return (
+            <Comment
+                key={comment.id}
+                comment={comment}
+            />
+        )
+    })
 
     return (
         <div className="card">
@@ -38,19 +54,21 @@ export default function Card({ post }) {
                 <strong onClick={() => dispatch(setSearchTerm(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}
                 {post.stickied && <BsFillPinAngleFill className="pinned"/>}
             </span>
-            
             <ContentLoader post={post}/>
             <div className="post-info">
                 <div className="votes">
-                    <span onClick={() => handleVote(1)} className={upvote ? 'upvote-active' : ''}><ImArrowUp/></span>
+                    <span onClick={() => handleVote(1)} className={upvote ? 'upvote-active' : 'upvote'} aria-label="upvote post"><ImArrowUp/></span>
                     <p>&nbsp;{post.ups + vote}&nbsp;</p>
-                    <span onClick={() => handleVote(-1)} className={downvote ? 'downvote-active' : ''}><ImArrowDown/></span>
+                    <span onClick={() => handleVote(-1)} className={downvote ? 'downvote-active' : 'downvote'} aria-label="downvote post"><ImArrowDown/></span>
                 </div>
                 <span className="time-ago">{moment.unix(post.created_utc).fromNow()}</span>
-                <div className="comments">
+                <div className="comments" onClick={toggleComments} aria-label="show comments">
                     <span><FaComment /></span>
                     <p>&nbsp;{post.num_comments}&nbsp;</p>
                 </div>
+            </div>
+            <div className="comment-section" id={post.id + 'comments'}>
+                {loading ? <LoaderSmall/> : displayedComments}
             </div>
         </div>
     )
