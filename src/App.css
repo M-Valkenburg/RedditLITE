@@ -44,3 +44,7 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+a {
+  word-break: break-word;
+}
