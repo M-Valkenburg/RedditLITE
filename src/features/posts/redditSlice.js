@@ -5,7 +5,16 @@ export const fetchPosts = createAsyncThunk(
     async (sub) => {
         const response = await fetch(`https://www.reddit.com/r/${sub}.json`);
         const json = await response.json();
-        return json.data.children.map((post) => post.data);
+        return json.data.children.map(post => post.data);
+    }
+);
+
+export const fetchComments = createAsyncThunk(
+    'comments/fetchComments',
+    async (permalink) => {
+        const response = await fetch(`https://www.reddit.com${permalink}.json`);
+        const json = await response.json();
+        return json[1].data.children.map(comment => comment.data);
     }
 );
 
@@ -16,7 +25,11 @@ export const redditSlice = createSlice({
         isLoading: false,
         hasError: false,
         subreddit: 'popular',
-        searchTerm: ''
+        searchTerm: '',
+        showComments: false,
+        comments: [],
+        commentsLoading: false,
+        commentsError: false,
     },
     reducers: {
         setSubreddit(state, action) {
@@ -26,6 +39,9 @@ export const redditSlice = createSlice({
         },
         setSearchTerm(state, action) {
             state.searchTerm = action.payload;
+        },
+        setShowComments(state) {
+            state.showComments = !state.showComments;
         }
     },
     extraReducers: {
@@ -41,10 +57,24 @@ export const redditSlice = createSlice({
         [fetchPosts.rejected]: (state) => {
             state.isLoading = false;
             state.hasError = true;
+        },
+        [fetchComments.pending]: (state) => {
+            state.commentsLoading = true;
+            state.commentsError = false;
+        },
+        [fetchComments.fulfilled]: (state, action) => {
+            state.comments = action.payload;
+            state.commentsLoading = false;
+            state.commentsError = false;
+        },
+        [fetchComments.rejected]: (state) => {
+            state.commentsLoading = false;
+            state.commentsError = true;
         }
     }
 });
 
 export const { setSubreddit, setSearchTerm } = redditSlice.actions;
 export const selectPosts = (state) => state.reddit.posts;
+export const selectComments = (state) => state.reddit.comments;
 export default redditSlice.reducer;
