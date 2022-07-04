@@ -87,10 +87,19 @@
     cursor: pointer;
 }
 
+.upvote:hover,
 .upvote-active {
     color: green;
 }
 
+.downvote:hover,
 .downvote-active {
     color: red;
+}
+
+.comment-section {
+    border: 1px solid lightGrey;
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 15px;
 }
