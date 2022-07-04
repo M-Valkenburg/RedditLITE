@@ -1,5 +1,5 @@
 import React from 'react';
-import './SubredditsLoader.css';
+import './LoaderSmall.css';
 
 export default function SubredditsLoader() {
     return (
