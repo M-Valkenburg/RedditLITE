@@ -6,7 +6,7 @@ import remarkGfm from 'remark-gfm'
 
 export default function ContentLoader({ post }) {
     const toggleOverlay = () => {
-        const div = document.getElementById(post.id);
+        const div = document.getElementById(post.id + 'overlay');
         div.style.display = "none";
     }
 
@@ -20,7 +20,7 @@ export default function ContentLoader({ post }) {
         return (
             <div className="text-container" id={post.id + 'text'} onClick={expandText}>
                 <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
-                <div className="text-overlay" id={post.id} onClick={toggleOverlay}></div>
+                <div className="text-overlay" id={post.id + 'overlay'} onClick={toggleOverlay}></div>
             </div>
         )
     }
@@ -29,7 +29,7 @@ export default function ContentLoader({ post }) {
         return (
             <div className="text-container" id={post.id + 'text'} onClick={expandText}>
                 <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
-                <div className="text-overlay" id={post.id} onClick={toggleOverlay}></div>
+                <div className="text-overlay" id={post.id + 'overlay'} onClick={toggleOverlay}></div>
             </div>
         )
     }
@@ -38,7 +38,7 @@ export default function ContentLoader({ post }) {
         return (
             <div className="image-container" onClick={toggleOverlay}>
                 <img className="content-img" src={post.url} alt="" loading="lazy" decoding="async"/>
-                {post.over_18 && <div className="nsfw-content" id={post.id}><span>nsfw<br/>click to view</span></div>}
+                {post.over_18 && <div className="nsfw-content" id={post.id + 'overlay'}><span>nsfw<br/>click to view</span></div>}
             </div>
         )
     }
@@ -47,7 +47,7 @@ export default function ContentLoader({ post }) {
         return ( 
             <div className="video-container" onClick={toggleOverlay}>
                 <video className="content-video" src={post.media.reddit_video.fallback_url} preload="metadata" controls/>
-                {post.over_18 && <div className="nsfw-content" id={post.id}><span>nsfw<br/>click to view</span></div>}
+                {post.over_18 && <div className="nsfw-content" id={post.id + 'overlay'}><span>nsfw<br/>click to view</span></div>}
             </div>
         )
     }
