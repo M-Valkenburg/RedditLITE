@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { useDispatch } from 'react-redux';
 import './Card.css';
 import { BsFillPinAngleFill } from 'react-icons/bs';
@@ -37,10 +37,11 @@ export default function Card({ post, loadComments }) {
 
     const displayedComments = post.comments.map(comment => {
         return (
-            <Comment
-                key={comment.id}
-                comment={comment}
-            />
+            <Suspense key={comment.id}>
+                <Comment
+                    comment={comment}
+                />
+            </Suspense>
         )
     })
 
@@ -63,9 +64,9 @@ export default function Card({ post, loadComments }) {
                     <span><FaComment /></span>
                     <p>&nbsp;{post.num_comments}&nbsp;</p>
                 </div>
-            </div>
+            </div>       
             <div className="comment-section" id={post.id + 'comments'}>
-                {displayedComments}
+                {post.commentsLoading ? <LoaderSmall /> : displayedComments}
             </div>
         </div>
     )
