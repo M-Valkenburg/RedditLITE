@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import './Card.css';
 import { BsFillPinAngleFill } from 'react-icons/bs';
 import { FaComment } from 'react-icons/fa'
@@ -8,7 +8,7 @@ import moment from 'moment';
 import ContentLoader from './ContentLoader';
 import Comment from './Comment';
 import LoaderSmall from '../Loader/LoaderSmall';
-import { setSearchTerm, selectComments } from '../../features/posts/redditSlice';
+import { setSearchTerm } from '../../features/posts/redditSlice';
 
 export default function Card({ post, loadComments }) {
     const dispatch = useDispatch();
@@ -29,16 +29,13 @@ export default function Card({ post, loadComments }) {
         }
     }
 
-    const loading = useSelector((state) => state.reddit.commentsLoading);
-
     const toggleComments = () => {
         const div = document.getElementById(post.id + 'comments');
         loadComments(post.permalink, post.id);
         div.style.display = "initial";
     }
 
-    const comments = useSelector(selectComments);
-    const displayedComments = comments.map(comment => {
+    const displayedComments = post.comments.map(comment => {
         return (
             <Comment
                 key={comment.id}
@@ -68,7 +65,7 @@ export default function Card({ post, loadComments }) {
                 </div>
             </div>
             <div className="comment-section" id={post.id + 'comments'}>
-                {loading ? <LoaderSmall/> : displayedComments}
+                {displayedComments}
             </div>
         </div>
     )
