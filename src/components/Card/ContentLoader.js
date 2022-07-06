@@ -16,7 +16,7 @@ export default function ContentLoader({ post }) {
         div.style.maxHeight = '100%';
     }
 
-    if (!post.hint && post.url.includes('www.reddit.com')) {
+    if (!post.hint && post.url.includes('www.reddit.com') && !post.is_gallery) {
         return (
             <div className="text-container" id={post.id + 'text'} onClick={expandText}>
                 <div className="content-text"><ReactMarkdown remarkPlugins={[remarkGfm]}>{post.selftext}</ReactMarkdown></div>
@@ -52,7 +52,7 @@ export default function ContentLoader({ post }) {
         )
     }
 
-    if (post.post_hint === "link" || post.url.includes('/gallery/') || post.post_hint === "rich:video" || !post.hint) {
+    if (post.post_hint === "link" || post.is_gallery === true || post.post_hint === "rich:video" || !post.hint) {
         const url = post.url;
         let trimmedLink;
     
