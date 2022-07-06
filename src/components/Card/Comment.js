@@ -4,6 +4,7 @@ import { ImArrowUp, ImArrowDown } from 'react-icons/im';
 import moment from 'moment';
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import { numberReducer } from './numberReducer';
 
 export default function Comments({ comment }) {
     const [ vote, setVote ] = useState(0);
@@ -28,7 +29,7 @@ export default function Comments({ comment }) {
             <ReactMarkdown remarkPlugins={[remarkGfm]}>{comment.body}</ReactMarkdown>
             <div className="votes">
                 <span onClick={() => handleVote(1)} className={upvote ? 'upvote-active' : 'upvote'} aria-label="upvote post"><ImArrowUp/></span>
-                <p>&nbsp;{comment.ups + vote}&nbsp;</p>
+                <p>&nbsp;{numberReducer(comment.ups + vote)}&nbsp;</p>
                 <span onClick={() => handleVote(-1)} className={downvote ? 'downvote-active' : 'downvote'} aria-label="downvote post"><ImArrowDown/></span>
             </div>
         </div>

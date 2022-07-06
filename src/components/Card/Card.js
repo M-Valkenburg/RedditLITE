@@ -8,6 +8,7 @@ import moment from 'moment';
 import ContentLoader from './ContentLoader';
 import Comment from './Comment';
 import LoaderSmall from '../Loader/LoaderSmall';
+import { numberReducer } from './numberReducer';
 import { setSearchTerm } from '../../features/posts/redditSlice';
 
 export default function Card({ post, loadComments }) {
@@ -61,7 +62,7 @@ export default function Card({ post, loadComments }) {
             <div className="post-info">
                 <div className="votes">
                     <span onClick={() => handleVote(1)} className={upvote ? 'upvote-active' : 'upvote'} aria-label="upvote post"><ImArrowUp/></span>
-                    <p>&nbsp;{post.ups + vote}&nbsp;</p>
+                    <p>&nbsp;{numberReducer(post.ups + vote)}&nbsp;</p>
                     <span onClick={() => handleVote(-1)} className={downvote ? 'downvote-active' : 'downvote'} aria-label="downvote post"><ImArrowDown/></span>
                 </div>
                 <span className="time-ago">{moment.unix(post.created_utc).fromNow()}</span>
