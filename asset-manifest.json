@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/RedditLITE/static/css/main.3578332a.css",
-    "main.js": "/RedditLITE/static/js/main.708f67d9.js",
+    "main.js": "/RedditLITE/static/js/main.052b89b5.js",
     "static/css/710.406f1abe.chunk.css": "/RedditLITE/static/css/710.406f1abe.chunk.css",
     "static/js/710.46064100.chunk.js": "/RedditLITE/static/js/710.46064100.chunk.js",
     "static/js/708.3ea88d2f.chunk.js": "/RedditLITE/static/js/708.3ea88d2f.chunk.js",
     "static/media/error.png": "/RedditLITE/static/media/error.6580dd8cff3013458a74.png",
-    "static/media/404.jpg": "/RedditLITE/static/media/404.6356a29f1797a6ca4f13.jpg",
+    "static/media/404.jpg": "/RedditLITE/static/media/404.7abbe74c748a465e8594.jpg",
     "static/media/logo.png": "/RedditLITE/static/media/logo.ac853294d561f9a9c095.png",
     "index.html": "/RedditLITE/index.html",
     "main.3578332a.css.map": "/RedditLITE/static/css/main.3578332a.css.map",
-    "main.708f67d9.js.map": "/RedditLITE/static/js/main.708f67d9.js.map",
+    "main.052b89b5.js.map": "/RedditLITE/static/js/main.052b89b5.js.map",
     "710.406f1abe.chunk.css.map": "/RedditLITE/static/css/710.406f1abe.chunk.css.map",
     "710.46064100.chunk.js.map": "/RedditLITE/static/js/710.46064100.chunk.js.map",
     "708.3ea88d2f.chunk.js.map": "/RedditLITE/static/js/708.3ea88d2f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3578332a.css",
-    "static/js/main.708f67d9.js"
+    "static/js/main.052b89b5.js"
   ]
 }
