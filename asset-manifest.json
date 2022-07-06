@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/RedditLITE/static/css/main.3578332a.css",
-    "main.js": "/RedditLITE/static/js/main.3c8e1385.js",
-    "static/css/804.951fbbdc.chunk.css": "/RedditLITE/static/css/804.951fbbdc.chunk.css",
-    "static/js/804.46205fc3.chunk.js": "/RedditLITE/static/js/804.46205fc3.chunk.js",
+    "main.js": "/RedditLITE/static/js/main.3cef84a5.js",
+    "static/css/804.4151b0a8.chunk.css": "/RedditLITE/static/css/804.4151b0a8.chunk.css",
+    "static/js/804.ef21adaa.chunk.js": "/RedditLITE/static/js/804.ef21adaa.chunk.js",
     "static/js/708.3ea88d2f.chunk.js": "/RedditLITE/static/js/708.3ea88d2f.chunk.js",
     "static/media/error.png": "/RedditLITE/static/media/error.6580dd8cff3013458a74.png",
     "static/media/404.jpg": "/RedditLITE/static/media/404.6356a29f1797a6ca4f13.jpg",
     "static/media/logo.png": "/RedditLITE/static/media/logo.ac853294d561f9a9c095.png",
     "index.html": "/RedditLITE/index.html",
     "main.3578332a.css.map": "/RedditLITE/static/css/main.3578332a.css.map",
-    "main.3c8e1385.js.map": "/RedditLITE/static/js/main.3c8e1385.js.map",
-    "804.951fbbdc.chunk.css.map": "/RedditLITE/static/css/804.951fbbdc.chunk.css.map",
-    "804.46205fc3.chunk.js.map": "/RedditLITE/static/js/804.46205fc3.chunk.js.map",
+    "main.3cef84a5.js.map": "/RedditLITE/static/js/main.3cef84a5.js.map",
+    "804.4151b0a8.chunk.css.map": "/RedditLITE/static/css/804.4151b0a8.chunk.css.map",
+    "804.ef21adaa.chunk.js.map": "/RedditLITE/static/js/804.ef21adaa.chunk.js.map",
     "708.3ea88d2f.chunk.js.map": "/RedditLITE/static/js/708.3ea88d2f.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3578332a.css",
-    "static/js/main.3c8e1385.js"
+    "static/js/main.3cef84a5.js"
   ]
 }
