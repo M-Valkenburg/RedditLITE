@@ -45,8 +45,13 @@ export default function Card({ post, loadComments }) {
         )
     })
 
+    const hideComments = () => {
+        const div = document.getElementById(post.id + 'comments');
+        div.style.display = "none";
+    };
+
     return (
-        <div className="card">
+        <div className="card" id={post.id}>
             {post.over_18 ? <h2>{post.title} <span className="nsfw-tag">nsfw</span></h2> : <h2>{post.title}</h2>}
             <span className="header-info">
                 <strong onClick={() => dispatch(setSearchTerm(post.subreddit))}>{post.subreddit_name_prefixed}</strong> - Posted by {post.author}
@@ -67,6 +72,7 @@ export default function Card({ post, loadComments }) {
             </div>       
             <div className="comment-section" id={post.id + 'comments'}>
                 {post.commentsLoading ? <LoaderSmall /> : displayedComments}
+                <a href={'#' + post.id} className="hide-comments" onClick={hideComments}>Hide comments</a>
             </div>
         </div>
     )
