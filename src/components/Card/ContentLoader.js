@@ -37,7 +37,7 @@ export default function ContentLoader({ post }) {
     if (post.post_hint === "image") {
         return (
             <div className="image-container" onClick={toggleOverlay}>
-                <img className="content-img" src={post.url} alt=""/>
+                <img className="content-img" src={post.url} alt="" loading="lazy" decoding="async"/>
                 {post.over_18 && <div className="nsfw-content" id={post.id}><span>nsfw<br/>click to view</span></div>}
             </div>
         )
