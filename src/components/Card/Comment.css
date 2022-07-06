@@ -1,11 +1,13 @@
 .comment {
     border-bottom: 1px solid lightGrey;
     margin-bottom: 15px;
+    text-align: left;
+    word-break: break-word;
 }
 
 .comment:last-of-type {
-    border-bottom: none;
-    margin-bottom: 0;
+    margin: 0;
+    display: none;
 }
 
 .comment p {
