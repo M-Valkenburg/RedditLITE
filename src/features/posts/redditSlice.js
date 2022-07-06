@@ -39,11 +39,12 @@ export const redditSlice = createSlice({
             state.searchTerm = action.payload;
         },
         commentsPending(state, action) {
-            state.posts[action.payload].commentsloading = true;
+            state.posts[action.payload].commentsLoading = true;
             state.posts[action.payload].commentsError = false;
         },
         commentsFulfilled(state, action) {
             state.posts[action.payload.index].commentsLoading = false;
+            state.posts[action.payload.index].commentsError = false;
             state.posts[action.payload.index].comments = action.payload.comments;
         },
         commentsRejected(state, action) {
