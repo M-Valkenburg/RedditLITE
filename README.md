@@ -1,46 +1,39 @@
-# Getting Started with Create React App and Redux
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h1>Reddit LITE</h1>
+<hr><p>In this app you can view posts from Reddit and it's Subreddits.</p><h2>General Information</h2>
+<hr><ul>
+<li>This project was created for the Frond-End career path from CodeCademy. The assignment was to build a Reddit app using the Reddit json API.</li>
+</ul><h2>Technologies Used</h2>
+<hr><ul>
+<li>HTML</li>
+</ul><ul>
+<li>CSS</li>
+</ul><ul>
+<li>JavaScript</li>
+</ul><ul>
+<li>React</li>
+</ul><h2>Features</h2>
+<hr><ul>
+<li>Displays 25 posts from the r/popular Subreddit by default.</li>
+</ul><ul>
+<li>Posts can be upvoted or downvoted.</li>
+</ul><ul>
+<li>Each posts has an option to display it's comments.</li>
+</ul><ul>
+<li>Comments can be upvoted or downvoted.</li>
+</ul><ul>
+<li>There is a list of popular Subreddits that can be clicked and viewed.</li>
+</ul><ul>
+<li>The search function can be used to view different subreddits.</li>
+</ul><ul>
+<li>Posts with text are reduced to a fixed height but can be fully viewed by clicking on them.</li>
+</ul><ul>
+<li>Images and videos marked as NSFW (18+) are blurred by default and can be unblurred by clicking on them.</li>
+</ul><h2>Setup</h2>
+<hr><p>Used packages:</p>
+<ul>
+<li>react-icons</li>
+<li>react-markdown</li>
+<li>remark-gfm</li>
+<li>moment</li>
+</ul><h2>Project Status</h2>
+<hr><p>Completed</p>
